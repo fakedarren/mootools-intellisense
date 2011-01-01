@@ -47,7 +47,7 @@ var typeOf = function(obj){
 	/// <para>'window' - (string) If object is the window object.</para>
 	/// <para>'document' - (string) If object is the document object.</para>
 	/// <para>'event' - (string) If object is an event.</para>
-	/// <para>false - (boolean) If object is undefined, null, NaN or none of the above.</para>
+	/// <para>null - If object is undefined, null, NaN or none of the above.</para>
 	/// <para></para>
 	/// </summary>
 	/// <param name="obj">The object to inspect.</param>
