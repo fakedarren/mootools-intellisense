@@ -258,3 +258,73 @@ Array.prototype.rgbToHex = function(array){
 	/// <param name=""></param>
 	/// <returns type="" />
 };
+
+
+/*
+STRING
+*/
+String.prototype.test = function(regex, params){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.contains = function(string, separator){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.trim = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.clean = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.camelCase = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.hyphenate = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.capitalize = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.escapeRegExp = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.toInt = function(base){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.toFloat = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.hexToRgb = function(array){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.rgbToHex = function(array){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+String.prototype.substitute = function(object, regexp){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
