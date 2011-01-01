@@ -328,3 +328,112 @@ String.prototype.substitute = function(object, regexp){
 	/// <param name=""></param>
 	/// <returns type="" />
 };
+
+/*
+NUMBER
+*/
+Number.prototype.limit = function(min, max){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.round = function(precision){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.times = function(fn, bind){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.toFloat = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.toInt = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.abs = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.acos = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.asin = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.atan = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.atan2 = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.ceil = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.cos = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.exp = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.floor = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.log = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.max = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.min = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.pow = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.sin = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.sqrt = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Number.prototype.tan = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
