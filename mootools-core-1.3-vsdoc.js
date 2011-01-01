@@ -136,3 +136,125 @@ Object.append = function(original, extension){
 	/// <param name="extension" type="Object">The object whose properties will be copied to original.</param>
 	/// <returns type="Object" />
 };
+
+/*
+ARRAY
+*/
+
+Array.prototype.each = function(fn, bind){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.invoke = function(method, args){
+	/// <summary>
+	/// Returns a new array with the named method applied to the array's contents.
+	/// <para></para>
+	/// <para>The method that is invoked is a method of each of the items. If the method does not exist, then an error will be thrown.</para>
+	/// </summary>
+	/// <param name="method" type="String">The method to apply to each item in the array.</param>
+	/// <param name="args">Any number of arguments to pass to the named method.</param>
+	/// <returns type="Array" />
+};
+Array.prototype.every = function(fn, bind){
+	/// <summary>Returns true if every element in the array satisfies the provided testing function. This method is provided only for browsers without native Array:every support.</summary>
+	/// <param name="fn" type="Function">The function to test for each element.</param>
+	/// <param name="bind" type="Object" optional="true">The object to use as 'this' in the function.</param>
+	/// <returns type="Boolean" />
+};
+Array.prototype.filter = function(fn, bind){
+	/// <summary>Creates a new array with all of the elements of the array for which the provided filtering function returns true. This method is provided only for browsers without native Array:filter support.</summary>
+	/// <param name="fn" type="Function">The function to test each element of the array. This function is passed the item and its index in the array.</param>
+	/// <param name="bind" type="Object" optional="true">The object to use as 'this' in the function.</param>
+	/// <returns type="Array" />
+};
+Array.prototype.clean = function(){
+	/// <summary>Creates a new array with all of the elements of the array which are defined (i.e. not null or undefined).</summary>
+	/// <returns type="Array" />
+};
+Array.prototype.indexOf = function(item, from){
+	/// <summary>Returns the index of the first element within the array equal to the specified value, or -1 if the value is not found. This method is provided only for browsers without native Array:indexOf support.</summary>
+	/// <param name="item">The item to search for in the array.</param>
+	/// <param name="from" type="Number" optional="true">The index of the array at which to begin the search.</param>
+	/// <returns type="Number" />
+};
+Array.prototype.map = function(fn, bind){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.some = function(fn, bind){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.associate = function(keys){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.link = function(object){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.contains = function(item, from){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.append = function(array){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.getLast = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.getRandom = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.include = function(item){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.combine = function(array){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.erase = function(item){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.empty = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.flatten = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.pick = function(){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.hexToRgb = function(array){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
+Array.prototype.rgbToHex = function(array){
+	/// <summary></summary>
+	/// <param name=""></param>
+	/// <returns type="" />
+};
