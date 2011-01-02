@@ -699,16 +699,19 @@ var $$ = function(selector){
 };
 
 Element.prototype = {
-	getElement: function(){
-		/// <summary></summary>
+	getElement: function(selector){
+		/// <summary>Gets the first descendant element matching the passed CSS selector. Returns null if not matched.</summary>
+		/// <param name="selector" type="String">The CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
 	getElements: function(){
-		/// <summary></summary>
+		/// <summary>Gets all descendant elements matching the passed CSS selector. Returns an Elements array, which can be empty if nothing is found.</summary>
+		/// <param name="selector" type="String">The CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
-	getElementById: function(){
-		/// <summary></summary>
+	getElementById: function(id){
+		/// <summary>Gets the element with the specified id found inside the current Element. Returns null if not found.</summary>
+		/// <param name="id" type="String">The ID of the element to find.</param>
 		/// <returns type="Element" />
 	},
 	set: function(){
@@ -723,39 +726,49 @@ Element.prototype = {
 		/// <summary></summary>
 		/// <returns type="Element" />
 	},
-	match: function(){
-		/// <summary></summary>
+	match: function(match){
+		/// <summary>Tests this Element to see if it matches the argument passed in.</summary>
+		/// <param name="match">Either a CSS selector or Element instance to check against.</param>
+		/// <returns type="Boolean" />
+	},
+	contains: function(el){
+		/// <summary>Checks all descendants of this Element for a match.</summary>
+		/// <param name="el">Either an Element reference, or an ID.</param>
+		/// <returns type="Boolean" />
+	},
+	inject: function(el, where){
+		/// <summary>Injects, or inserts, the Element at a particular place relative to the Element's children (specified by the second the argument).</summary>
+		/// <param name="el">Can be the id of an element or an element.</param>
+		/// <param name="where" type="String" optional="true">The place to inject this Element. Can be 'top', 'bottom', 'after', or 'before'. Defaults to 'bottom'.</param>
 		/// <returns type="Element" />
 	},
-	contains: function(){
-		/// <summary></summary>
+	grab: function(el, where){
+		/// <summary>Appends the Element at a particular place relative to the Element's children (specified by the where parameter).</summary>
+		/// <param name="el">Can be the id of an element or an element.</param>
+		/// <param name="where" type="String" optional="true">The place to append this Element. Can be 'top' or 'bottom'. Defaults to 'bottom'.</param>
 		/// <returns type="Element" />
 	},
-	inject: function(){
-		/// <summary></summary>
-		/// <returns type="Element" />
-	},
-	grab: function(){
-		/// <summary></summary>
-		/// <returns type="Element" />
-	},
-	adopt: function(){
-		/// <summary></summary>
+	adopt: function(el, others){
+		/// <summary>Inserts the passed element(s) inside the Element (which will then become the parent element).</summary>
+		/// <param name="el">The id of an element, an Element, or an array of elements.</param>
+		/// <param name="others" optional="true">Any number of additional elements, ids or arrays</param>
 		/// <returns type="Element" />
 	},
 	wraps: function(){
 		/// <summary></summary>
 		/// <returns type="Element" />
 	},
-	appendText: function(){
-		/// <summary></summary>
+	appendText: function(text, where){
+		/// <summary>Works like Element:grab, but instead of accepting an id or an element, it only accepts text. A text node will be created inside this Element, in either the top or bottom position.</summary>
+		/// <param name="text" type="String">The text to append.</param>
+		/// <param name="where" type="String" optional="true">The place to append this Element. Can be 'top' or 'bottom'. Defaults to 'bottom'.</param>
 		/// <returns type="Element" />
 	},
 	dispose: function(){
-		/// <summary></summary>
+		/// <summary>Removes the Element from the DOM. Returns the element you're removing; handy if you want to inject it back. If you don't need to keep it, use Element:destroy instead.</summary>
 		/// <returns type="Element" />
 	},
-	clone: function(){
+	clone: function(keepcontents, keepID){
 		/// <summary></summary>
 		/// <returns type="Element" />
 	},
@@ -763,20 +776,24 @@ Element.prototype = {
 		/// <summary></summary>
 		/// <returns type="Element" />
 	},
-	hasClass: function(){
-		/// <summary></summary>
+	hasClass: function(classname){
+		/// <summary>Checks to see if an element has a class.</summary>
+		/// <param name="classname" type="String">The classname to test.</param>
+		/// <returns type="Boolean" />
+	},
+	addClass: function(classname){
+		/// <summary>Adds a class to an element, if the element does not already have it.</summary>
+		/// <param name="classname" type="String">The class to add.</param>
 		/// <returns type="Element" />
 	},
-	addClass: function(){
-		/// <summary></summary>
+	removeClass: function(classname){
+		/// <summary>Removes a class from an element.</summary>
+		/// <param name="classname" type="String">The class to remove.</param>
 		/// <returns type="Element" />
 	},
-	removeClass: function(){
-		/// <summary></summary>
-		/// <returns type="Element" />
-	},
-	toggleClass: function(){
-		/// <summary></summary>
+	toggleClass: function(classname){
+		/// <summary>Adds or removes the passed in class name to the Element, depending on whether or not it's already present.</summary>
+		/// <param name="classname" type="String">The class to add or remove.</param>
 		/// <returns type="Element" />
 	},
 	getPrevious: function(){
@@ -820,20 +837,19 @@ Element.prototype = {
 		/// <returns type="Element" />
 	},
 	empty: function(){
-		/// <summary></summary>
+		/// <summary>Empties an Element of all its children.</summary>
 		/// <returns type="Element" />
 	},
 	destroy: function(){
-		/// <summary></summary>
-		/// <returns type="Element" />
+		/// <summary>Empties an Element of all its children, removes and garbages the Element. Useful to clear memory before the pageUnload.</summary>
 	},
 	toQueryString: function(){
-		/// <summary></summary>
-		/// <returns type="Element" />
+		/// <summary>Reads the child inputs of the Element and generates a query string based on their values.</summary>
+		/// <returns type="String" />
 	},
 	getSelected: function(){
-		/// <summary></summary>
-		/// <returns type="Element" />
+		/// <summary>Returns an array of selected options of a select element.</summary>
+		/// <returns type="Array" />
 	},
 	getProperty: function(){
 		/// <summary></summary>
