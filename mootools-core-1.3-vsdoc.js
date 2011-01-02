@@ -676,3 +676,201 @@ var Class = function(properties){
 	/// <param name="properties" type="Object">The collection of properties that apply to the Class. Also accepts some special properties such as Extends, Implements, and initialize.</param>
 	/// <returns type="Class" />
 };
+
+/*
+ELEMENT
+*/
+var Element = function(type, properties){
+	/// <summary>Creates a new Element of the type passed in.</summary>
+	/// <param name="type" type="String">The tag name for the Element to be created, or an actual DOM element or a CSS selector.</param>
+	/// <param name="properties" type="Object" optional="true">Calls the Single Argument version of Element:set with the properties object passed in.</param>
+	/// <returns type="Element" />
+};
+
+var $ = function(id){
+	/// <summary>The $ function has a dual purpose: Getting the element by its id, and making an element in Internet Explorer "grab" all the Element methods.</summary>
+	/// <param name="id" type="String">The ID of the element to grab (and extend in IE)</param>
+	/// <returns type="Element" />
+};
+var $$ = function(selector){
+	/// <summary>
+	/// Selects and extends DOM elements. Return an Elements instance. The Element instance returned is an array-like object,
+	/// supporting every Array method and every Element method.
+	/// </summary>
+	/// <returns type="Element" />
+};
+
+Element.prototype = {
+	getElement: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getElements: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getElementById: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	set: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	get: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	erase: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	match: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	contains: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	inject: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	grab: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	adopt: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	wraps: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	appendText: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	dispose: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	clone: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	replaces: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	hasClass: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	addClass: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	removeClass: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	toggleClass: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getPrevious: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getAllPrevious: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getNext: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getAllNext: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getFirst: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getLast: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getParent: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getParents: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getSiblings: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getChildren: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	empty: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	destroy: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	toQueryString: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getSelected: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getProperty: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	getProperties: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	setProperty: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	setProperties: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	removeProperty: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	removeProperties: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	store: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	retrieve: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	},
+	eliminate: function(){
+		/// <summary></summary>
+		/// <returns type="Element" />
+	}
+};
