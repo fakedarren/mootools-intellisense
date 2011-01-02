@@ -140,7 +140,6 @@ Object.append = function(original, extension){
 /*
 ARRAY
 */
-
 Array.prototype.each = function(fn, bind){
 	/// <summary></summary>
 	/// <param name=""></param>
@@ -258,7 +257,6 @@ Array.prototype.rgbToHex = function(array){
 	/// <param name=""></param>
 	/// <returns type="" />
 };
-
 
 /*
 STRING
