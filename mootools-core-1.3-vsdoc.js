@@ -914,21 +914,41 @@ Element.prototype = {
 		/// <param name="type" type="String" optional="true">Copies only events of this type. If not defined, copies all events.</param>
 		/// <returns type="Element" />
 	},
-	scrollTo: function(){
+	scrollTo: function(x, y){
+		/// <summary>Scrolls the element to the specified coordinated (if the element has an overflow).</summary>
+		/// <param name="x" type="Number">The x coordinate.</param>
+		/// <param name="y" type="Number">The y coordinate.</param>
 	},
 	getSize: function(){
+		/// <summary>Returns an object containing the width (as x) and the height (as y) of the target Element, taking into account borders and padding.</summary>
+		/// <returns type="Object" />
 	},
 	getScrollSize: function(){
+		/// <summary>Returns an object containing the x and y dimensions of the target Element.</summary>
+		/// <returns type="Object" />
 	},
 	getScroll: function(){
+		/// <summary>Returns an object containing the x and y dimensions of the target Element's scroll.</summary>
+		/// <returns type="Object" />
 	},
-	getPosition: function(){
+	getPosition: function(relative){
+		/// <summary>Returns an object with the x and y coordinates of the Element's real offset.</summary>
+		/// <param name="relative" type="Element" optional="true">If set, the position will be relative to this Element. Defaults to document.</param>
+		/// <returns type="Object" />
 	},
-	setPosition: function(){
+	setPosition: function(positions){
+		/// <summary>Sets the position of the element's left and top values to the x/y positions you specify.</summary>
+		/// <param name="positions" type="Object">An object with the x/y positions you wish to set.</param>
+		/// <returns type="Element" />
 	},
-	getCoordinates: function(){
+	getCoordinates: function(relative){
+		/// <summary>Returns an object with width, height, left, right, top, and bottom coordinate values of the Element.</summary>
+		/// <param name="relative" type="Element" optional="true">if set, the position will be relative to this element, otherwise relative to the document.</param>
+		/// <returns type="Object" />
 	},
 	getOffsetParent: function(){
+		/// <summary>Returns the parent of the element that is positioned, if there is one.</summary>
+		/// <returns type="Element" />
 	}
 };
 
