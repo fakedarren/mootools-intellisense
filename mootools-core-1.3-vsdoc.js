@@ -626,3 +626,35 @@ Event.prototype = {
 		/// <returns type="Event" />
 	}
 };
+
+/*
+BROWSER
+*/
+var Browser = {
+	Features: {
+		xpath: false,
+		air: false,
+		query: false,
+		json: false,
+		xhr: false
+	},
+	Request: false,
+	Name: {
+		ie: false, ie6: false, ie7: false, ie8: false, ie9: false,
+		firefox: false, firefox2: false, firefox3: false, firefox4: false,
+		safari: false, safari3: false, safari4: false, safari5: false,
+		chrome: false,
+		opera: false
+	},
+	Platform: {
+		mac: false,
+		win: false,
+		linux: false,
+		ios: false,
+		android: false,
+		webos: false,
+		other: false,
+		name: ""
+	},
+	Flash: false
+};
