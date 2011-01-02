@@ -600,29 +600,29 @@ var Event = function(event, win){
 	/// <param name="win" type="window" optional="true">The context of the Event. Defaults to 'window'.</param>
 	/// <returns type="Event" />
 };
-
-Event.prototype.page = { x: 1, y: 1 };
-Event.prototype.client = { x: 1, y: 1 };
-Event.prototype.rightClick = false;
-Event.prototype.wheel = 1;
-Event.prototype.relatedTarget = new Element();
-Event.prototype.target = new Element();
-Event.prototype.code = 1;
-Event.prototype.key = "";
-Event.prototype.shift = false;
-Event.prototype.control = false;
-Event.prototype.alt = false;
-Event.prototype.meta = false;
-
-Event.prototype.stop = function(){
-	/// <summary>Stop an Event from propagating and also executes preventDefault.</summary>
-	/// <returns type="Event" />
-};
-Event.prototype.stopPropagation = function(){
-	/// <summary>Cross browser method to stop the propagation of an event (this stops the event from bubbling up through the DOM).</summary>
-	/// <returns type="Event" />
-};
-Event.prototype.preventDefault = function(){
-	/// <summary>Cross browser method to prevent the default action of the event.</summary>
-	/// <returns type="Event" />
+Event.prototype = {
+	page: { x: 1, y: 1 },
+	client: { x: 1, y: 1 },
+	rightClick: false,
+	wheel: 1,
+	relatedTarget: new Element(),
+	target: new Element(),
+	code: 1,
+	key: "",
+	shift: false,
+	control: false,
+	alt: false,
+	meta: false,
+	stop: function(){
+		/// <summary>Stop an Event from propagating and also executes preventDefault.</summary>
+		/// <returns type="Event" />
+	},
+	stopPropagation: function(){
+		/// <summary>Cross browser method to stop the propagation of an event (this stops the event from bubbling up through the DOM).</summary>
+		/// <returns type="Event" />
+	},
+	preventDefault: function(){
+		/// <summary>Cross browser method to prevent the default action of the event.</summary>
+		/// <returns type="Event" />
+	}
 };
