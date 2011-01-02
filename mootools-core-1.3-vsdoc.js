@@ -879,17 +879,56 @@ Element.prototype = {
 	},
 	getStyles: function(){
 	},
-	addEvent: function(){
+	addEvent: function(type, fn){
+		/// <summary>Attaches an event listener to a DOM element.</summary>
+		/// <param name="type" type="String">The event name to monitor ('click', 'load', etc) without the prefix 'on'.</param>
+		/// <param name="fn" type="Function">The function to execute.</param>
+		/// <returns type="Element" />
 	},
-	addEvents: function(){
+	addEvents: function(events){
+		/// <summary>Attaches multiple event listeners to a DOM element.</summary>
+		/// <param name="events" type="Object">An object with key/value representing: key the event name, and value the function that is called when the Event occurs.</param>
+		/// <returns type="Element" />
 	},
-	removeEvent: function(){
+	removeEvent: function(type, fn){
+		/// <summary>Removes an event listener from a DOM element.</summary>
+		/// <param name="type" type="String">The event name to remove.</param>
+		/// <param name="fn" type="Function">The function to remove.</param>
+		/// <returns type="Element" />
 	},
-	removeEvents: function(){
+	removeEvents: function(events){
+		/// <summary>Removes all events of a certain type from an Element. If no argument is passed, removes all events of all types.</summary>
+		/// <param name="events" optional="true">Either a string name (eg 'click') or a object like 'addEvents()'.</param>
+		/// <returns type="Element" />
 	},
-	fireEvent: function(){
+	fireEvent: function(type, args, delay){
+		/// <summary>Executes all events of the specified type present in the Element.</summary>
+		/// <param name="type" type="String">The event name (e.g. 'click').</param>
+		/// <param name="type" optional="true">Array or single object, arguments to pass to the function. If more than one argument, must be an array.</param>
+		/// <param name="type" type="Number" optional="true">Delay (in ms) to wait to execute the event.</param>
+		/// <returns type="Element" />
 	},
-	cloneEvents: function(){
+	cloneEvents: function(from, type){
+		/// <summary>Clones all Events from an Element to this Element.</summary>
+		/// <param name="from" type="Element">Copy all events from this Element.</param>
+		/// <param name="type" type="String" optional="true">Copies only events of this type. If not defined, copies all events.</param>
+		/// <returns type="Element" />
+	},
+	scrollTo: function(){
+	},
+	getSize: function(){
+	},
+	getScrollSize: function(){
+	},
+	getScroll: function(){
+	},
+	getPosition: function(){
+	},
+	setPosition: function(){
+	},
+	getCoordinates: function(){
+	},
+	getOffsetParent: function(){
 	}
 };
 
