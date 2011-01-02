@@ -871,13 +871,26 @@ Element.prototype = {
 		/// <summary></summary>
 		/// <returns type="Element" />
 	},
-	setStyle: function(){
+	setStyle: function(property, value){
+		/// <summary>Sets a CSS property to the Element.</summary>
+		/// <param name="property" type="string">The property to set.</param>
+		/// <param name="value">The value to which to set it. Numeric values of properties requiring a unit will automatically be appended with 'px'.</param>
+		/// <returns type="Element" />
 	},
-	setStyles: function(){
+	setStyles: function(styles){
+		/// <summary>Applies a collection of styles to the Element.</summary>
+		/// <param name="styles" type="Object">An object of property/value pairs for all the styles to apply.</param>
+		/// <returns type="Element" />
 	},
-	getStyle: function(){
+	getStyle: function(property){
+		/// <summary>Returns the style of the Element given the property passed in.</summary>
+		/// <param name="property" type="String">The CSS style property you wish to retrieve.</summary>
+		/// <returns type="String" />
 	},
-	getStyles: function(){
+	getStyles: function(properties){
+		/// <summary>Returns an object of styles of the Element for each argument passed in.</summary>
+		/// <param name="properties", type="String">Any number of style properties.</param>
+		/// <returns type="Object" />
 	},
 	addEvent: function(type, fn){
 		/// <summary>Attaches an event listener to a DOM element.</summary>
