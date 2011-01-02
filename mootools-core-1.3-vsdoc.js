@@ -91,6 +91,10 @@ String.from = function(item){
 	/// <param name="item">The argument to return as a String.</param>
 	/// <returns type="String" />
 };
+String.uniqueID = function(){
+	/// <summary>Generates a unique ID.</summary>
+	/// <returns type="String" />
+};
 
 Number.from = function(item){
 	/// <summary>
