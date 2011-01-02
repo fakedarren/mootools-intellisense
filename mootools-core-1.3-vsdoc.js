@@ -23,7 +23,7 @@ will still be listed in Intellisense.
 It does not include support for the 1.2 Compatibility Layer.
 */
 
-/* 
+/*
 CORE
 */
 var typeOf = function(obj){
@@ -573,4 +573,58 @@ Object.toQueryString = function(object){
 	/// <summary>Generates a query string from key/value pairs in an object and URI encodes the values.</summary>
 	/// <param name="object"type="Object">The object.</param>
 	/// <returns type="String" />
+};
+
+/*
+EVENT
+*/
+var Event = function(event, win){
+	/// <summary>
+	/// An Event object. Contains the following properties:
+	/// <para></para>
+	/// <para>page.x - (number) The x position of the mouse, relative to the full window.</para>
+	/// <para>page.y - (number) The y position of the mouse, relative to the full window.</para>
+	/// <para>client.x - (number) The x position of the mouse, relative to the viewport.</para>
+	/// <para>client.y - (number) The y position of the mouse, relative to the viewport.</para>
+	/// <para>rightClick - (boolean) True if the user clicked the right mousebutton</para>
+	/// <para>wheel - (number) The amount of third button scrolling.</para>
+	/// <para>relatedTarget - (element) The event related target, NOT extended with '$'.</para>
+	/// <para>target - (element) The event target, not extended with '$' for performance reasons.</para>
+	/// <para>code - (number) The keycode of the key pressed.</para>
+	/// <para>key - (string) The key pressed as a lowercase string. key can be 'enter', 'up', 'down', 'left', 'right', 'space', 'backspace', 'delete', and 'esc'.</para>
+	/// <para>shift - (boolean) True if the user pressed the shift key.</para>
+	/// <para>control - (boolean) True if the user pressed the control key.</para>
+	/// <para>alt - (boolean) True if the user pressed the alt key.</para>
+	/// <para>meta - (boolean) True if the user pressed the meta key.</para>
+	/// <para></para>
+	/// </summary>
+	/// <param name="event" type="Event">An HTMLEvent object.</param>
+	/// <param name="win" type="window" optional="true">The context of the Event. Defaults to 'window'.</param>
+	/// <returns type="Event" />
+};
+
+Event.prototype.page = { x: 1, y: 1 };
+Event.prototype.client = { x: 1, y: 1 };
+Event.prototype.rightClick = false;
+Event.prototype.wheel = 1;
+Event.prototype.relatedTarget = new Element();
+Event.prototype.target = new Element();
+Event.prototype.code = 1;
+Event.prototype.key = "";
+Event.prototype.shift = false;
+Event.prototype.control = false;
+Event.prototype.alt = false;
+Event.prototype.meta = false;
+
+Event.prototype.stop = function(){
+	/// <summary>Stop an Event from propagating and also executes preventDefault.</summary>
+	/// <returns type="Event" />
+};
+Event.prototype.stopPropagation = function(){
+	/// <summary>Cross browser method to stop the propagation of an event (this stops the event from bubbling up through the DOM).</summary>
+	/// <returns type="Event" />
+};
+Event.prototype.preventDefault = function(){
+	/// <summary>Cross browser method to prevent the default action of the event.</summary>
+	/// <returns type="Event" />
 };
