@@ -501,3 +501,76 @@ Function.prototype.periodical = function(period, bind, args){
 	/// <param name="args" optional="true">The arguments passed (must be an array if the arguments are greater than one).</param>
 	/// <returns type="Number" />
 };
+
+/*
+OBJECT
+*/
+Object.subset = function(object, keys){
+	/// <summary>Get a subset of an object.</summary>
+	/// <param name="object" type="Object">The object.</param>
+	/// <param name="keys" type="Array">An array with the keys.</param>
+	/// <returns type="Object" />
+};
+Object.map = function(object, fn, bind){
+	/// <summary>Creates a new map with the results of calling a provided function on every value in the map.</summary>
+	/// <param name="object" type="Object">The object.</param>
+	/// <param name="fn" type="Function">The function to produce an element of the Object from an element of the current one.</param>
+	/// <param name="bind" type="Object" optional="true">The object to use as 'this' in the function.</param>
+	/// <returns type="Object" />
+};
+Object.filter = function(object, fn, bind){
+	/// <summary>Creates a new object with all of the elements of the object for which the provided filtering function returns true.</summary>
+	/// <param name="object" type="Object">The object.</param>
+	/// <param name="fn" type="Function">The function to test each element of the Object. This function is passed the value and its key in the Object.</param>
+	/// <param name="bind" type="Object" optional="true">The object to use as 'this' in the function.</param>
+	/// <returns type="Object" />
+};
+Object.every = function(object, fn, bind){
+	/// <summary>Returns true if every value in the object satisfies the provided testing function.</summary>
+	/// <param name="object" type="Object">The object.</param>
+	/// <param name="fn" type="Function">The function to test each element of the Object. This function is passed the value and its key in the Object.</param>
+	/// <param name="bind" type="Object" optional="true">The object to use as 'this' in the function.</param>
+	/// <returns type="Boolean" />
+};
+Object.some = function(){
+	/// <summary>Returns true if at least one value in the object satisfies the provided testing function.</summary>
+	/// <param name="object" type="Object">The object.</param>
+	/// <param name="fn" type="Function">The function to test each element of the Object. This function is passed the value and its key in the Object.</param>
+	/// <param name="bind" type="Object" optional="true">The object to use as 'this' in the function.</param>
+	/// <returns type="Boolean" />
+};
+Object.keys = function(object){
+	/// <summary>Returns an array containing all the keys, in the same order as the values returned by Object:values.</summary>
+	/// <param name="object" type="Object">The object.</param>
+	/// <returns type="Array" />
+};
+Object.values = function(object){
+	/// <summary>Returns an array containing all the values, in the same order as the keys returned by Object:keys.</summary>
+	/// <param name="object" type="Object">The object.</param>
+	/// <returns type="Array" />
+};
+Object.getLength = function(object){
+	/// <summary>Returns the number of keys in the object.</summary>
+	/// <param name="object" type="Object">The object.</param>
+	/// <returns type="Number" />
+};
+Object.keyOf = function(object, item){
+	/// <summary>
+	/// Returns the key of the specified value. Synonymous with Array:indexOf.
+	/// <para></para>
+	/// <para>If the object has a specified item in it, it will return the key of that item. Otherwise, returns false.</para>
+	/// </summary>
+	/// <param name="object" type="Object">The object.</param>
+	/// <param name="item">The item to search for in the object.</param>
+};
+Object.contains = function(object, value){
+	/// <summary>Tests for the presence of a specified value in the object.</summary>
+	/// <param name="object"type="Object">The object.</param>
+	/// <param name="value">The value to search for in the Object.</param>
+	/// <returns type="Boolean" />
+};
+Object.toQueryString = function(object){
+	/// <summary>Generates a query string from key/value pairs in an object and URI encodes the values.</summary>
+	/// <param name="object"type="Object">The object.</param>
+	/// <returns type="String" />
+};
