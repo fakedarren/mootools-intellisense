@@ -676,7 +676,7 @@ var Class = function(properties){
 };
 
 /*
-ELEMENT
+ELEMENT, ELEMENT.STYLES, ELEMENT.EVENT, ELEMENT.DIMENSIONS
 */
 var Element = function(type, properties){
 	/// <summary>Creates a new Element of the type passed in.</summary>
@@ -870,5 +870,27 @@ Element.prototype = {
 	eliminate: function(){
 		/// <summary></summary>
 		/// <returns type="Element" />
+	},
+	setStyle: function(){
+	},
+	setStyles: function(){
+	},
+	getStyle: function(){
+	},
+	getStyles: function(){
+	},
+	addEvent: function(){
+	},
+	addEvents: function(){
+	},
+	removeEvent: function(){
+	},
+	removeEvents: function(){
+	},
+	fireEvent: function(){
+	},
+	cloneEvents: function(){
 	}
 };
+
+Element.Events = {};
