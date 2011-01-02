@@ -437,3 +437,67 @@ Number.prototype.tan = function(){
 	/// <param name=""></param>
 	/// <returns type="" />
 };
+
+/*
+FUNCTION
+*/
+Function.attempt = function(functions){
+	/// <summary>Tries to execute a number of functions. Returns immediately the return value of the first non-failed function without executing successive functions, or null.</summary>
+	/// <param name="functions">Any number of functions to execute.</param>
+};
+Function.prototype.extend = function(key, value){
+	/// <summary>
+	/// Add methods to a function.
+	/// <para></para>
+	/// <para>'extend' adds the method or property to a single instance. To extend the prototype and all instances, use 'implement' instead.</para>
+	/// </summary>
+	/// <param name="key">The key of the function method.</param>
+	/// <param name="value">The function method or another value of the function.</param>
+};
+Function.prototype.implement = function(key, value){
+	/// <summary>
+	/// Add methods to the prototype.
+	/// <para></para>
+	/// <para>'implement' extends the prototype and all instances, use 'extend' instead to extend a single instance.</para>
+	/// </summary>
+	/// <param name="key">The key of the prototype.</param>
+	/// <param name="value">The function or another value of the prototype.</param>
+};
+Function.prototype.attempt = function(args, bind){
+	/// <summary>Tries to execute a single function. Returns immediately the return value of the function if it does not fail, or null.</summary>
+	/// <param name="args">An argument, or array of arguments to run the function with.</param>
+	/// <param name="bind" type="Object" optional="true">The object that the "this" of the function will refer to.</param>
+};
+Function.prototype.pass = function(args, bind){
+	/// <summary>Returns a closure with arguments and bind.</summary>
+	/// <param name="args" optional="true">The arguments to pass to the function (must be an array if passing more than one argument).</param>
+	/// <param name="bind" type="Object" optional="true">The object that the "this" of the function will refer to.</param>
+	/// <returns type="Function" />
+};
+Function.prototype.bind = function(bind, args){
+	/// <summary>Changes the scope of this within the target function to refer to the bind parameter.</summary>
+	/// <param name="bind" type="Object">The object that the "this" of the function will refer to.</param>
+	/// <param name="args" optional="true">The arguments to pass to the function (must be an array if passing more than one argument).</param>
+};
+Function.prototype.delay = function(delay, bind, args){
+	/// <summary>
+	/// Delays the execution of a function by a specified duration.
+	/// <para></para>
+	/// <para>Returns the timeout id (for clearing delays).</para>
+	/// </summary>
+	/// <param name="delay" type="Number">The duration to wait (in milliseconds).</param>
+	/// <param name="bind" type="Object" optional="true">The object that the "this" of the function will refer to.</param>
+	/// <param name="args" optional="true">The arguments passed (must be an array if the arguments are greater than one).</param>
+	/// <returns type="Number" />
+};
+Function.prototype.periodical = function(period, bind, args){
+	/// <summary>
+	/// The duration of the intervals between executions.
+	/// <para></para>
+	/// <para>Returns the timeout id (for clearing the periodical).</para>
+	/// </summary>
+	/// <param name=""></param>
+	/// <param name="bind" type="Object" optional="true">The object that the "this" of the function will refer to.</param>
+	/// <param name="args" optional="true">The arguments passed (must be an array if the arguments are greater than one).</param>
+	/// <returns type="Number" />
+};
