@@ -658,3 +658,21 @@ var Browser = {
 	},
 	Flash: false
 };
+
+/*
+CLASS
+*/
+var Class = function(properties){
+	/// <summary>
+	/// Creates a new MooTools Class. Accepts an object of methods and properties for the Class, and some special properties:
+	/// <para></para>
+	/// <para>Extends: Pass in the name of, or an array of, Classes you wish to extend.</para>
+	/// <para></para>
+	/// <para>Implements: Pass in the name of, or an array of, Classes. This Class instance will get all their methods and properties.</para>
+	/// <para></para>
+	/// <para>initialize(): The initialize function will be the constructor for this class when new instances are created.</para>
+	/// <para></para>
+	/// </summary>
+	/// <param name="properties" type="Object">The collection of properties that apply to the Class. Also accepts some special properties such as Extends, Implements, and initialize.</param>
+	/// <returns type="Class" />
+};
