@@ -266,69 +266,63 @@ Array.prototype.rgbToHex = function(array){
 STRING
 */
 String.prototype.test = function(regex, params){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Searches for a match between the string and a regular expression.</summary>
+	/// <param name="regex">The string or regular expression you want to match the string with.</param>
+	/// <param name="params" type="String" optional="true">If first parameter is a string, any parameters you want to pass to the regular expression ('g' has no effect).</param>
+	/// <returns type="Boolean" />
 };
 String.prototype.contains = function(string, separator){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Checks to see if the string passed in is contained in this string. If the separator parameter is passed, will check to see if the string is contained in the list of values separated by that parameter.</summary>
+	/// <param name="string" type="String">The string to search for.</param>
+	/// <param name="separator" type="String" optional="true">The string that separates the values in this string (e.g. Element classNames are separated by a ' ').</param>
+	/// <returns type="Boolean" />
 };
 String.prototype.trim = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Trims the leading and trailing spaces off a string.</summary>
+	/// <returns type="String" />
 };
 String.prototype.clean = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Removes all extraneous whitespace from a string and trims it.</summary>
+	/// <returns type="String" />
 };
 String.prototype.camelCase = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Converts a hyphenated string to a camelcased string.</summary>
+	/// <returns type="String" />
 };
 String.prototype.hyphenate = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Converts a camelcased string to a hyphenated string.</summary>
+	/// <returns type="String" />
 };
 String.prototype.capitalize = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Converts the first letter of each word in a string to uppercase.</summary>
+	/// <returns type="String" />
 };
 String.prototype.escapeRegExp = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Escapes all regular expression characters from the string.</summary>
+	/// <returns type="String" />
 };
 String.prototype.toInt = function(base){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Parses this string and returns a number of the specified radix or base.</summary>
+	/// <param name="base" type="Number" optional="true">The base to use (defaults to 10).</param>
+	/// <returns type="Number" />
 };
 String.prototype.toFloat = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Parses this string and returns a floating point number.</summary>
+	/// <returns type="Number" />
 };
 String.prototype.hexToRgb = function(array){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Converts a hexadecimal color value to RGB. Input string must be in one of the following hexadecimal color formats (with or without the hash). '#ffffff', #fff', 'ffffff', or 'fff'</summary>
+	/// <param name="array" type="Boolean" optional="true">If true is passed, will output an array (e.g. [255, 51, 0]) instead of a string (e.g. "rgb(255,51,0)").</param>
 };
 String.prototype.rgbToHex = function(array){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Converts an RGB color value to hexadecimal. Input string must be in one of the following RGB color formats. "rgb(255, 255, 255)", or "rgba(255, 255, 255, 1)"</summary>
+	/// <param name="array" type="Boolean" optional="true">If true is passed, will output an array (e.g. ['ff', '33', '00']) instead of a string (e.g. "#ff3300").</param>
 };
 String.prototype.substitute = function(object, regexp){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Substitutes keywords in a string using an object/array. Removes undefined keywords and ignores escaped keywords.</summary>
+	/// <param name="object" type="Object">The key/value pairs used to substitute a string.</param>
+	/// <param name="regexp" type="RegExp" optional="true">The regexp pattern to be used in the string keywords, with global flag. Defaults to /\?{([^}]+)}/g.</param>
+	/// <returns type="String" />
 };
 
 /*
