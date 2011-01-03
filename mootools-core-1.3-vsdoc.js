@@ -1299,12 +1299,17 @@ Cookie.prototype = {
 /*
 JSON
 */
-var JSON = function(){
-};
-JSON.prototype = {
-	encode: function(){
+var JSON = {
+	encode: function(obj){
+		/// <summary>Converts an object or array to a JSON string.</summary>
+		/// <param name="obj" type="Object">The Object to convert to a String.<param>
+		/// <returns type="String" />
 	},
-	decode: function(){
+	decode: function(json, secure){
+		/// <summary>Converts a JSON string into an JavaScript object.</summary>
+		/// <param name="json" type="String">The String to evaluate.</param>
+		/// <param name="secure" type="Boolean" optional="true">Defaults to false, if set to true, checks for any hazardous syntax and returns null if any found.</param>
+		/// <returns type="Object" />
 	}
 };
 
