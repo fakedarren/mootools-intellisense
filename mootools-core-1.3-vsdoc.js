@@ -688,16 +688,20 @@ Element.prototype = {
 		/// <param name="id" type="String">The ID of the element to find.</param>
 		/// <returns type="Element" />
 	},
-	set: function(){
-		/// <summary></summary>
+	set: function(property, value){
+		/// <summary>Sets an Element's property, or an instance in Element.Properties.</summary>
+		/// <param name="property" type="String">Either a key from Element.Properties or an Element's HTML attribute to set.</param>
+		/// <param name="value">The value to set.</param>
 		/// <returns type="Element" />
 	},
-	get: function(){
-		/// <summary></summary>
+	get: function(property){
+		/// <summary>Gets an item from Element.Properties or an Element's attribute.</summary>
+		/// <param name="property" type="String">The property to get.</param>
 		/// <returns type="Element" />
 	},
-	erase: function(){
-		/// <summary></summary>
+	erase: function(property){
+		/// <summary>Erases an item from Element.Properties.</summary>
+		/// <param name="property" type="String">The property to erase.</param>
 		/// <returns type="Element" />
 	},
 	match: function(match){
