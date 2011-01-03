@@ -754,8 +754,10 @@ Element.prototype = {
 		/// <param name="others" optional="true">Any number of additional elements, ids or arrays</param>
 		/// <returns type="Element" />
 	},
-	wraps: function(){
-		/// <summary></summary>
+	wraps: function(el, where){
+		/// <summary>The Element is moved to the position of the passed element and becomes the parent, wrapping around.</summary>
+		/// <param name="el">The ID or Element to wrap around.</param>
+		/// <param name="where" type="String" optional="true">Defaults to 'bottom'. The place to insert the passed element. Can be 'top' or 'bottom'.</param>
 		/// <returns type="Element" />
 	},
 	appendText: function(text, where){
@@ -769,11 +771,14 @@ Element.prototype = {
 		/// <returns type="Element" />
 	},
 	clone: function(keepcontents, keepID){
-		/// <summary></summary>
+		/// <summary>Clones the Element and returns the cloned one.</summary>
+		/// <param name="keepcontents" type="Boolean" optional="true">Defaults to true. When set to false the Element's contents are not cloned.</param>
+		/// <param name="keepID" type="Boolean" optional="true">Defaults to false. When true the cloned Element keeps the id attribute, if present. Same goes for any of the cloned childNodes.</param>
 		/// <returns type="Element" />
 	},
-	replaces: function(){
-		/// <summary></summary>
+	replaces: function(element){
+		/// <summary>Replaces the passed Element with this Element.</summary>
+		/// <param name="element">Can either be an ID or an Element.</param>
 		/// <returns type="Element" />
 	},
 	hasClass: function(classname){
@@ -796,44 +801,54 @@ Element.prototype = {
 		/// <param name="classname" type="String">The class to add or remove.</param>
 		/// <returns type="Element" />
 	},
-	getPrevious: function(){
-		/// <summary></summary>
+	getPrevious: function(selector){
+		/// <summary>Returns the previous sibling of the Element, null if not found.</summary>
+		/// <param name="selector" type="String" optional="true">Optional CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
-	getAllPrevious: function(){
-		/// <summary></summary>
+	getAllPrevious: function(selector){
+		/// <summary>Returns all previous siblings of the Element.</summary>
+		/// <param name="selector" type="String" optional="true">Optional CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
-	getNext: function(){
-		/// <summary></summary>
+	getNext: function(selector){
+		/// <summary>Returns the next sibling of the Element, null if not found.</summary>
+		/// <param name="selector" type="String" optional="true">Optional CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
-	getAllNext: function(){
-		/// <summary></summary>
+	getAllNext: function(selector){
+		/// <summary>Returns all next siblings of the Element.</summary>
+		/// <param name="selector" type="String" optional="true">Optional CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
-	getFirst: function(){
-		/// <summary></summary>
+	getFirst: function(selector){
+		/// <summary>Gets the first child element. Returns null if not found.</summary>
+		/// <param name="selector" type="String" optional="true">Optional CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
-	getLast: function(){
-		/// <summary></summary>
+	getLast: function(selector){
+		/// <summary>Gets the last child element. Returns null if not found.</summary>
+		/// <param name="selector" type="String" optional="true">Optional CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
-	getParent: function(){
-		/// <summary></summary>
+	getParent: function(selector){
+		/// <summary>Gets the Element's parent.</summary>
+		/// <param name="selector" type="String" optional="true">An optional CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
-	getParents: function(){
-		/// <summary></summary>
+	getParents: function(selector){
+		/// <summary>Gets all the Element's parents.</summary>
+		/// <param name="selector" type="String" optional="true">An optional CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
-	getSiblings: function(){
-		/// <summary></summary>
+	getSiblings: function(selector){
+		/// <summary>Gets all an Element's siblings.</summary>
+		/// <param name="selector" type="String" optional="true">An optional CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
-	getChildren: function(){
-		/// <summary></summary>
+	getChildren: function(selector){
+		/// <summary>Gets all an Element's direct children.</summary>
+		/// <param name="selector" type="String" optional="true">An optional CSS selector to match.</param>
 		/// <returns type="Element" />
 	},
 	empty: function(){
@@ -851,40 +866,51 @@ Element.prototype = {
 		/// <summary>Returns an array of selected options of a select element.</summary>
 		/// <returns type="Array" />
 	},
-	getProperty: function(){
-		/// <summary></summary>
+	getProperty: function(property){
+		/// <summary>Returns a single element attribute.</summary>
+		/// <param name="property" type="String">The property to retrieve.</param>
+		/// <returns type="String" />
+	},
+	getProperties: function(properties){
+		/// <summary>Gets multiple element attributes. Returns an Object.</summary>
+		/// <param name="properties" type="String">Any number of properties to retrieve (eg 'id', 'alt', 'src')</param>
+		/// <returns type="Object" />
+	},
+	setProperty: function(property, value){
+		/// <summary>Sets an attribute or special property for this Element. Returns the Element.</summary>
+		/// <param name="property" type="String">The property to assign the value passed in.</param>
+		/// <param name="value">The value to assign to the property passed in.</param>
 		/// <returns type="Element" />
 	},
-	getProperties: function(){
-		/// <summary></summary>
+	setProperties: function(properties){
+		/// <summary>Sets numerous attributes for the Element. Returns the Element.</summary>
+		/// <param name="properties" type="Object">An Object with key/value pairs</param>
 		/// <returns type="Element" />
 	},
-	setProperty: function(){
-		/// <summary></summary>
+	removeProperty: function(property){
+		/// <summary>Removes an attribute from the Element. Returns the Element.</summary>
+		/// <param name="property" type="String">The property to remove</param>
 		/// <returns type="Element" />
 	},
-	setProperties: function(){
-		/// <summary></summary>
+	removeProperties: function(properties){
+		/// <summary>Removes numerous attributes from the Element. Returns the Element.</summary>
+		/// <param name="properties" type="String">Any number of properties as separate arguments (eg 'id', 'title', 'src')</param>
 		/// <returns type="Element" />
 	},
-	removeProperty: function(){
-		/// <summary></summary>
+	store: function(key, value){
+		/// <summary>Stores an item in the Elements Storage, linked to this Element. Returns the Element.</summary>
+		/// <param name="key" type="String">The key you want to assign to the stored value.</param>
+		/// <param name="value">Any value you want to store.</param>
 		/// <returns type="Element" />
 	},
-	removeProperties: function(){
-		/// <summary></summary>
-		/// <returns type="Element" />
+	retrieve: function(key, defaultVal){
+		/// <summary>Retrieves a value from the Elements storage.</summary>
+		/// <param name="key" type="String">The key you wish to retrieve.</param>
+		/// <param name="defaultVal" optional="true">If no item is stored, a default value to return.</param>
 	},
-	store: function(){
-		/// <summary></summary>
-		/// <returns type="Element" />
-	},
-	retrieve: function(){
-		/// <summary></summary>
-		/// <returns type="Element" />
-	},
-	eliminate: function(){
-		/// <summary></summary>
+	eliminate: function(key){
+		/// <summary>Eliminates a key from the Element Storage.</summary>
+		/// <param name="key" type="String">The key you want to eliminate from the storage.</param>
 		/// <returns type="Element" />
 	},
 	setStyle: function(property, value){
