@@ -1243,3 +1243,75 @@ Fx.Transitions = {
 	Pow: { easeIn: false, easeOut: false, easeInOut: false },
 	Sine: { easeIn: false, easeOut: false, easeInOut: false }
 };
+
+/*
+REQUEST
+*/
+var Request = function(){
+};
+Request.prototype = {
+	setHeader: function(){
+	},
+	getHeader: function(){
+	},
+	send: function(){
+	},
+	cancel: function(){
+	},
+	isRunning: function(){
+	}
+};
+
+Element.prototype.send = function(){
+};
+
+/*
+REQUEST.HTML
+*/
+Request.HTML = function(){
+};
+Request.HTML.prototype = Request.prototype;
+
+Element.prototype.load = function(){
+};
+
+/*
+REQUEST.JSON
+*/
+Request.JSON = function(){
+};
+Request.JSON.prototype = Request.prototype;
+
+/*
+COOKIE
+*/
+var Cookie = function(){
+};
+Cookie.prototype = {
+	write: function(){
+	},
+	read: function(){
+	},
+	dispose: function(){
+	}
+};
+
+/*
+JSON
+*/
+var JSON = function(){
+};
+JSON.prototype = {
+	encode: function(){
+	},
+	decode: function(){
+	}
+};
+
+/*
+SWIFF
+*/
+var Swiff = function(){
+};
+Swiff.prototype.remote = function(){
+};
