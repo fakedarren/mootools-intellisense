@@ -1247,38 +1247,172 @@ Fx.Transitions = {
 /*
 REQUEST
 */
-var Request = function(){
+var Request = function(options){
+	/// <summary>
+	/// An XMLHttpRequest Wrapper. Options are:
+	/// <para></para>
+	/// <para>url - (string: defaults to null) The URL to request. (Note, this can also be an instance of URI)</para>
+	/// <para>method - (string: defaults to 'post') The HTTP method for the request, can be either 'post' or 'get'.</para>
+	/// <para>data - (string: defaults to '') The default data for Request:send, used when no data is given.</para>
+	/// <para>link - (string: defaults to 'ignore') Can be 'ignore', 'cancel' and 'chain'.</para>
+	/// <para>    'ignore' - Any calls made to start while the request is running will be ignored.</para>
+	/// <para>    'cancel' - Any calls made to start while the request is running will take precedence over the currently running request. The new request will start immediately, canceling the one that is currently running.</para>
+	/// <para>    'chain' - Any calls made to start while the request is running will be chained up, and will take place as soon as the current request has finished, one after another.</para>
+	/// <para>async - (boolean: defaults to true) If set to false, the requests will be synchronous and freeze the browser during request.</para>
+	/// <para>encoding - (string: defaults to 'utf-8') The encoding to be set in the request header.</para>
+	/// <para>headers - (object) An object to use in order to set the request headers.</para>
+	/// <para>isSuccess - (function) Overrides the built-in isSuccess function.</para>
+	/// <para>evalScripts - (boolean: defaults to false) If set to true, script tags inside the response will be evaluated.</para>
+	/// <para>evalResponse - (boolean: defaults to false) If set to true, the entire response will be evaluated. Responses with javascript content-type will be evaluated automatically.</para>
+	/// <para>emulation - (boolean: defaults to true) If set to true, other methods than 'post' or 'get' are appended as post-data named '_method' (used in rails)</para>
+	/// <para>urlEncoded - (boolean: defaults to true) If set to true, the content-type header is set to www-form-urlencoded + encoding</para>
+	/// <para>timeout - (integer: defaults to 0) In conjunction with onTimeout event, it determines the amount of milliseconds before considering a connection timed out. (It's suggested to not use timeout with big files and only when knowing what's expected.)</para>
+	/// <para>noCache - (boolean; defaults to false) If true, appends a unique noCache value to the request to prevent caching. (IE has a bad habit of caching ajax request values. Including this script and setting the noCache value to true will prevent it from caching. The server should ignore the noCache value.)</para>
+	/// <para>user - (string: defaults to undefined) When username is set the Request will open with credentials and try to authenticate.</para>
+	/// <para>password - (string: defaults to undefined) You can use this option together with the user option to set authentication credentials when necessary. Note that the password will be passed as plain text and is therefore readable by anyone through the source code. It is therefore encouraged to use this option carefully</para>
+	/// <para></para>
+	/// <para>Events are:</para>
+	/// <para></para>
+	/// <para>onRequest - fired when the Request is sent.</para>
+	/// <para>onComplete - fired when the Request is completed.</para>
+	/// <para>onCancel - fired when the Request is cancelled.</para>
+	/// <para>onSuccess - fired when the Request is successful. Passed the following arguments:</para>
+	/// <para>    responseText - (string) The returned text from the request.</para>
+	/// <para>    responseXML - (mixed) The response XML from the request.</para>
+	/// <para>onFailure - fired when the Request is unsuccessful.</para>
+	/// <para></para>
+	/// </summary>
+	/// <param name="options" type="Object" optional="true">The options.</param>
+	/// <returns type="Request" />
 };
 Request.prototype = {
-	setHeader: function(){
+	setHeader: function(name, value){
+		/// <summary>Add or modify a header for the request. It will not override headers from the options.</summary>
+		/// <param name="name" type="String">The name for the header.</param>
+		/// <param name="value" type="String">The value to be assigned.</param>
+		/// <returns type="Request" />
 	},
-	getHeader: function(){
+	getHeader: function(name){
+		/// <summary>Returns the given response header or null if not found.</summary>
+		/// <param name="name" type="String">The header to retrieve the value of.</param>
+		/// <returns type="String" />
 	},
-	send: function(){
+	send: function(options){
+		/// <summary>Opens the Request connection and sends the provided data with the specified options.</summary>
+		/// <param name="options" type="Object" optional="true">The options for the sent Request. Will also accept data as a query string for compatibility reasons.</param>
+		/// <returns type="Request" />
 	},
 	cancel: function(){
+		/// <summary>Cancels the currently running request, if any.</summary>
+		/// <returns type="Request" />
 	},
 	isRunning: function(){
+		/// <summary>Returns true if the request is currently running.</summary>
+		/// <returns type="Boolean" />
 	}
 };
 
-Element.prototype.send = function(){
+Element.prototype.send = function(url){
+	/// <summary>Sends a form or a container of inputs with an HTML request.</summary>
+	/// <param name="url" type="String" optional="true">The url you want to send the form or the "container of inputs" to. If url is omitted, the action of the form will be used. url cannot be omitted for "container of inputs".</param>
+	/// <returns type="Element" />
 };
 
 /*
 REQUEST.HTML
 */
-Request.HTML = function(){
+Request.HTML = function(options){
+	/// <summary>
+	/// An XMLHttpRequest Wrapper. Options are:
+	/// <para></para>
+	/// <para>evalScripts - (boolean: defaults to true) If set to true, script tags inside the response will be evaluated. This overrides the false default from Request.</para>
+	/// <para>update - (element: defaults to null) The Element to insert the response text of the Request into upon completion of the request.</para>
+	/// <para>append - (element: defaults to null) The Element to append the response text of the Request into upon completion of the request.</para>
+	/// <para>filter - (mixed: defaults to null) To filter the response tree by a selector or function. See Elements:filter</para>
+	/// <para>url - (string: defaults to null) The URL to request. (Note, this can also be an instance of URI)</para>
+	/// <para>method - (string: defaults to 'post') The HTTP method for the request, can be either 'post' or 'get'.</para>
+	/// <para>data - (string: defaults to '') The default data for Request:send, used when no data is given.</para>
+	/// <para>link - (string: defaults to 'ignore') Can be 'ignore', 'cancel' and 'chain'.</para>
+	/// <para>    'ignore' - Any calls made to start while the request is running will be ignored.</para>
+	/// <para>    'cancel' - Any calls made to start while the request is running will take precedence over the currently running request. The new request will start immediately, canceling the one that is currently running.</para>
+	/// <para>    'chain' - Any calls made to start while the request is running will be chained up, and will take place as soon as the current request has finished, one after another.</para>
+	/// <para>async - (boolean: defaults to true) If set to false, the requests will be synchronous and freeze the browser during request.</para>
+	/// <para>encoding - (string: defaults to 'utf-8') The encoding to be set in the request header.</para>
+	/// <para>headers - (object) An object to use in order to set the request headers.</para>
+	/// <para>isSuccess - (function) Overrides the built-in isSuccess function.</para>
+	/// <para>evalResponse - (boolean: defaults to false) If set to true, the entire response will be evaluated. Responses with javascript content-type will be evaluated automatically.</para>
+	/// <para>emulation - (boolean: defaults to true) If set to true, other methods than 'post' or 'get' are appended as post-data named '_method' (used in rails)</para>
+	/// <para>urlEncoded - (boolean: defaults to true) If set to true, the content-type header is set to www-form-urlencoded + encoding</para>
+	/// <para>timeout - (integer: defaults to 0) In conjunction with onTimeout event, it determines the amount of milliseconds before considering a connection timed out. (It's suggested to not use timeout with big files and only when knowing what's expected.)</para>
+	/// <para>noCache - (boolean; defaults to false) If true, appends a unique noCache value to the request to prevent caching. (IE has a bad habit of caching ajax request values. Including this script and setting the noCache value to true will prevent it from caching. The server should ignore the noCache value.)</para>
+	/// <para>user - (string: defaults to undefined) When username is set the Request will open with credentials and try to authenticate.</para>
+	/// <para>password - (string: defaults to undefined) You can use this option together with the user option to set authentication credentials when necessary. Note that the password will be passed as plain text and is therefore readable by anyone through the source code. It is therefore encouraged to use this option carefully</para>
+	/// <para></para>
+	/// <para>Events are:</para>
+	/// <para></para>
+	/// <para>onRequest - fired when the Request is sent.</para>
+	/// <para>onComplete - fired when the Request is completed.</para>
+	/// <para>onCancel - fired when the Request is cancelled.</para>
+	/// <para>onSuccess - fired when the Request is successful. Passed the following arguments:</para>
+	/// <para>    responseTree - (element) The node list of the remote response.</para>
+	/// <para>    responseElements - (array) An array containing all elements of the remote response.</para>
+	/// <para>    responseHTML - (string) The content of the remote response.</para>
+	/// <para>    responseJavaScript - (string) The portion of JavaScript from the remote response.</para>
+	/// <para>onFailure - fired when the Request is unsuccessful.</para>
+	/// <para></para>
+	/// </summary>
+	/// <param name="options" type="Object" optional="true">The options.</param>
+	/// <returns type="Request" />
 };
 Request.HTML.prototype = Request.prototype;
 
-Element.prototype.load = function(){
+Element.prototype.load = function(url){
+	/// <summary>Updates the content of the Element with a Request.HTML GET request.</summary>
+	/// <param name="url" type="String">The URL of the document to load.</param>
+	/// <returns type="Element" />
 };
 
 /*
 REQUEST.JSON
 */
-Request.JSON = function(){
+Request.JSON = function(options){
+	/// <summary>
+	/// An XMLHttpRequest Wrapper. Options are:
+	/// <para></para>
+	/// <para>secure - (boolean: defaults to true) If set to true, a syntax check will be done on the result JSON (see JSON.decode).</para>
+	/// <para>url - (string: defaults to null) The URL to request. (Note, this can also be an instance of URI)</para>
+	/// <para>method - (string: defaults to 'post') The HTTP method for the request, can be either 'post' or 'get'.</para>
+	/// <para>data - (string: defaults to '') The default data for Request:send, used when no data is given.</para>
+	/// <para>link - (string: defaults to 'ignore') Can be 'ignore', 'cancel' and 'chain'.</para>
+	/// <para>    'ignore' - Any calls made to start while the request is running will be ignored.</para>
+	/// <para>    'cancel' - Any calls made to start while the request is running will take precedence over the currently running request. The new request will start immediately, canceling the one that is currently running.</para>
+	/// <para>    'chain' - Any calls made to start while the request is running will be chained up, and will take place as soon as the current request has finished, one after another.</para>
+	/// <para>async - (boolean: defaults to true) If set to false, the requests will be synchronous and freeze the browser during request.</para>
+	/// <para>encoding - (string: defaults to 'utf-8') The encoding to be set in the request header.</para>
+	/// <para>headers - (object) An object to use in order to set the request headers.</para>
+	/// <para>isSuccess - (function) Overrides the built-in isSuccess function.</para>
+	/// <para>evalScripts - (boolean: defaults to false) If set to true, script tags inside the response will be evaluated.</para>
+	/// <para>evalResponse - (boolean: defaults to false) If set to true, the entire response will be evaluated. Responses with javascript content-type will be evaluated automatically.</para>
+	/// <para>emulation - (boolean: defaults to true) If set to true, other methods than 'post' or 'get' are appended as post-data named '_method' (used in rails)</para>
+	/// <para>urlEncoded - (boolean: defaults to true) If set to true, the content-type header is set to www-form-urlencoded + encoding</para>
+	/// <para>timeout - (integer: defaults to 0) In conjunction with onTimeout event, it determines the amount of milliseconds before considering a connection timed out. (It's suggested to not use timeout with big files and only when knowing what's expected.)</para>
+	/// <para>noCache - (boolean; defaults to false) If true, appends a unique noCache value to the request to prevent caching. (IE has a bad habit of caching ajax request values. Including this script and setting the noCache value to true will prevent it from caching. The server should ignore the noCache value.)</para>
+	/// <para>user - (string: defaults to undefined) When username is set the Request will open with credentials and try to authenticate.</para>
+	/// <para>password - (string: defaults to undefined) You can use this option together with the user option to set authentication credentials when necessary. Note that the password will be passed as plain text and is therefore readable by anyone through the source code. It is therefore encouraged to use this option carefully</para>
+	/// <para></para>
+	/// <para>Events are:</para>
+	/// <para></para>
+	/// <para>onRequest - fired when the Request is sent.</para>
+	/// <para>onComplete - fired when the Request is completed.</para>
+	/// <para>onCancel - fired when the Request is cancelled.</para>
+	/// <para>onSuccess - fired when the Request is successful. Passed the following arguments:</para>
+	/// <para>   responseJSON - (object) The JSON response object from the remote request.</para>
+	/// <para>   responseText - (string) The JSON response as string.</para>
+	/// <para>onFailure - fired when the Request is unsuccessful.</para>
+	/// <para></para>
+	/// </summary>
+	/// <param name="options" type="Object" optional="true">The options.</param>
+	/// <returns type="Request" />
 };
 Request.JSON.prototype = Request.prototype;
 
