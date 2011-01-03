@@ -648,6 +648,7 @@ var Class = function(properties){
 	/// <param name="properties" type="Object">The collection of properties that apply to the Class. Also accepts some special properties such as Extends, Implements, and initialize.</param>
 	/// <returns type="Class" />
 };
+Class.__class = true;
 
 /*
 ELEMENT, ELEMENT.STYLES, ELEMENT.EVENT, ELEMENT.DIMENSIONS
@@ -1043,6 +1044,7 @@ Fx.prototype = {
 		/// <returns type="Fx" />
 	}
 };
+Fx.__class = true;
 
 /*
 FX.TWEEN
@@ -1104,6 +1106,7 @@ Fx.Tween.prototype = {
 		/// <returns type="Fx.Tween" />
 	}
 };
+Fx.Tween.__class = true;
 
 Element.prototype.tween = function(property, from, to){
 	/// <summary>Transition any single CSS property of an Element from one value to another.</summary>
@@ -1195,6 +1198,7 @@ Fx.Morph.prototype = {
 		/// <returns type="Fx.Morph" />
 	}
 };
+Fx.Morph.__class = true;
 
 Element.prototype.morph = function(properties){
 		/// <summary>Executes a transition for any number of CSS properties in tandem.</summary>
@@ -1289,6 +1293,7 @@ Request.prototype = {
 		/// <returns type="Boolean" />
 	}
 };
+Request.__class = true;
 
 Element.prototype.send = function(url){
 	/// <summary>Sends a form or a container of inputs with an HTML request.</summary>
@@ -1343,6 +1348,7 @@ Request.HTML = function(options){
 	/// <returns type="Request" />
 };
 Request.HTML.prototype = Request.prototype;
+Request.HTML.__class = true;
 
 Element.prototype.load = function(url){
 	/// <summary>Updates the content of the Element with a Request.HTML GET request.</summary>
@@ -1393,6 +1399,7 @@ Request.JSON = function(options){
 	/// <returns type="Request" />
 };
 Request.JSON.prototype = Request.prototype;
+Request.JSON.__class = true;
 
 /*
 COOKIE
@@ -1479,3 +1486,4 @@ Swiff.remote = function(obj, fn, args){
 	/// <param name="fn" type="String">The name of the function to execute in the Flash movie.</param>
 	/// <param name="args" optional="true">Any number of arguments to pass to the named function.</param>
 };
+Swiff.__class = true;
