@@ -322,109 +322,90 @@ String.prototype.substitute = function(object, regexp){
 NUMBER
 */
 Number.prototype.limit = function(min, max){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Limits this number between two bounds.</summary>
+	/// <param name="min" type="Number">The minimum possible value.</param>
+	/// <param name="max" type="Number">The maximum possible value.</param>
+	/// <returns type="Number" />
 };
 Number.prototype.round = function(precision){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns this number rounded to the specified precision.</summary>
+	/// <param name="precision" type="Number" optional="true">The number of digits after the decimal place. Defaults to 0.</param>
+	/// <returns type="Number" />
 };
 Number.prototype.times = function(fn, bind){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Executes the function passed in the specified number of times.</summary>
+	/// <param name="fn" type="Function">The function which should be executed on each iteration of the loop. This function is passed the current iteration's index.</param>
+	/// <param name="bind" optional="true">The object to use as 'this' in the function.</param>
+	/// <returns type="Number" />
 };
 Number.prototype.toFloat = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns this number as a float. Useful because toFloat must work on both Strings and Numbers.</summary>
+	/// <returns type="Number" />
 };
-Number.prototype.toInt = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+Number.prototype.toInt = function(base){
+	/// <summary>Returns this number as another number with the passed in base. Useful because toInt must work on both Strings and Numbers.</summary>
+	/// <param name="base" type="Number" optional="true">The base to use.</param>
+	/// <returns type="Number" />
 };
 Number.prototype.abs = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the absolute value (modulus) of a number.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.acos = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the arccosine of a number.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.asin = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the arcsine of a number.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.atan = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
-};
-Number.prototype.atan2 = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the arctangent of a number.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.ceil = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the smallest integer greater than or equal to a number.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.cos = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the cosine of a number.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.exp = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns E^number, where number is the argument, and E is Euler's constant (2.718...), the base of the natural logarithm.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.floor = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the largest integer less than or equal to a number.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.log = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the natural logarithm (loge, also ln) of a number.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.max = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the largest of zero or more numbers.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.min = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the smallest of zero or more numbers.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.pow = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns base to the exponent power, that is, baseexponent.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.sin = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the sine of a number.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.sqrt = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the positive square root of a number.</summary>
+	/// <returns type="Number" />
 };
 Number.prototype.tan = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the tangent of a number.</summary>
+	/// <returns type="Number" />
 };
 
 /*
