@@ -8,10 +8,10 @@ Original JS Copyright:
 Copyright (c) 2006-2008 [Valerio Proietti](http://mad4milk.net/).
 
 Original Code & Documentation:
-[The MooTools production team](http://mootools.net/developers/).
+[The MooTools development team](http://mootools.net/developers/).
 
 This Documentation:
-Darren Waddell 2011
+Darren Waddell / [The MooTools development team](http://mootools.net/developers/) 2011
 
 This file has been commented to support Visual Studio Intellisense, and is not functional.
 It must be included alongside a real, working copy of MooTools 1.3.
