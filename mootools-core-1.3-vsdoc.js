@@ -1158,12 +1158,51 @@ Element.prototype.highlight = function(start, end){
 /*
 FX.MORPH
 */
-Fx.Morph = function(){
+Fx.Morph = function(element, options){
+	/// <summary>
+	/// Allows for the animation of multiple CSS properties at once, even by a CSS selector. Options are:
+	/// <para></para>
+	/// <para>fps - (number: defaults to 50) The frames per second for the transition.</para>
+	/// <para>unit - (string: defaults to 'px') The unit, e.g. 'px', 'em', or '%'.</para>
+	/// <para>link - (string: defaults to 'ignore') Can be 'ignore', 'cancel' and 'chain'.</para>
+	/// <para>    'ignore' - Any calls made to start while the effect is running will be ignored.</para>
+	/// <para>    'cancel' - Any calls made to start while the effect is running will take precedence over the currently running transition. The new transition will start immediately, cancelling the one that is currently running.</para>
+	/// <para>    'chain' - Any calls made to start while the effect is running will be chained up, and will take place as soon as the current effect has finished, one after another.</para>
+	/// <para>duration - (number: defaults to 500) The duration of the effect in ms. Can also be one of:</para>
+	/// <para>    'short' - 250ms</para>
+	/// <para>    'normal' - 500ms</para>
+	/// <para>    'long' - 1000ms</para>
+	/// <para>transition - (function: defaults to 'sine:in:out' The equation to use for the effect see Fx.Transitions. Also accepts a string in the following form:</para>
+	/// <para>    transition[:in][:out] - for example, 'linear', 'quad:in', 'back:in', 'bounce:out', 'elastic:out', 'sine:in:out'</para>
+	/// <para></para>
+	/// <para>Events available are:</para>
+	/// <para></para>
+	/// <para>start - The function to execute when the effect begins.</para>
+	/// <para>cancel - The function to execute when you manually stop the effect.</para>
+	/// <para>complete - The function to execute after the effect has processed.</para>
+	/// <para>chainComplete - The function to execute when using link 'chain' (see options). It gets called after all effects in the chain have completed.</para>
+	/// <para></para>
+	/// </summary>
+	/// <param name="element">An Element or element ID.</param>
+	/// <param name="options" type="Object" optional="true">An Object with options for the Fx.</param>
+	/// <returns type="Fx.Morph" />
 };
 Fx.Morph.prototype = {
-	start: function(){
+	start: function(properties){
+		/// <summary>Executes a transition for any number of CSS properties in tandem.</summary>
+		/// <param name="properties">
+		///		Either an object of key/value pairs of CSS attributes to change or a CSS selector from the page's stylesheet. 
+		///		If only one value is given for any CSS property, the transition will be from the current value of that property to the value given.
+		/// </param>
+		/// <returns type="Fx.Morph" />
 	},
-	set: function(){
+	set: function(to){
+		/// <summary>Sets the Element's CSS properties to the specified values immediately.</summary>
+		/// <param name="to">
+		///		Either an object of key/value pairs of CSS attributes to change or a CSS selector from the page's stylesheet. 
+		///		If only one value is given for any CSS property, the transition will be from the current value of that property to the value given.
+		/// </param>
+		/// <returns type="Fx.Morph" />
 	},
 	cancel: function(){
 		/// <summary>The cancel method is used to cancel a running transition. Fires the 'cancel' event.</summary>
@@ -1179,7 +1218,13 @@ Fx.Morph.prototype = {
 	}
 };
 
-Element.prototype.morph = function(){
+Element.prototype.morph = function(properties){
+		/// <summary>Executes a transition for any number of CSS properties in tandem.</summary>
+		/// <param name="properties">
+		///		Either an object of key/value pairs of CSS attributes to change or a CSS selector from the page's stylesheet. 
+		///		If only one value is given for any CSS property, the transition will be from the current value of that property to the value given.
+		/// </param>
+		/// <returns type="Element" />
 };
 
 /*
