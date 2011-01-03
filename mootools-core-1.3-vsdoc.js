@@ -145,9 +145,9 @@ Object.append = function(original, extension){
 ARRAY
 */
 Array.prototype.each = function(fn, bind){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Used to iterate through arrays.</summary>
+	/// <param name="fn" type="Function">The function to test for each element. Has three parameters; The current item, the current item's index, and the iterable you are iterating through.</param>
+	/// <param name="bind" type="Object" optional="true">The object to use as 'this' within the function.</param>
 };
 Array.prototype.invoke = function(method, args){
 	/// <summary>
@@ -182,84 +182,77 @@ Array.prototype.indexOf = function(item, from){
 	/// <returns type="Number" />
 };
 Array.prototype.map = function(fn, bind){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Creates a new array with the results of calling a provided function on every element in the array. This method is provided only for browsers without native Array:map support.</summary>
+	/// <param name="fn" type="Function">The function to produce an element of the new Array from an element of the current one.</param>
+	/// <param name="bind" type="Object" optional="true">The object to use as 'this' in the function.</param>
+	/// <returns type="Array" />
 };
 Array.prototype.some = function(fn, bind){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns true if at least one element in the array satisfies the provided testing function. This method is provided only for browsers without native Array:some support.</summary>
+	/// <param name="fn" type="Function">The function to test for each element. This function is passed the item and its index in the array.</param>
+	/// <param name="bind" type="Object" optional="true">The object to use as 'this' in the function.</param>
+	/// <returns type="Array" />
 };
 Array.prototype.associate = function(keys){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Creates an object with key-value pairs based on the array of keywords passed in and the current content of the array.</summary>
+	/// <param name="keys" type="Array">Its items will be used as the keys of the object that will be created.</param>
+	/// <returns type="Object" />
 };
 Array.prototype.link = function(object){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Accepts an object of key / function pairs to assign values.</summary>
+	/// <param name="object" type="Object">An object containing key / function pairs must be passed to be used as a template for associating values with the different keys.</param>
+	/// <returns type="Object" />
 };
 Array.prototype.contains = function(item, from){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Tests an array for the presence of an item.</summary>
+	/// <param name="item">The item to search for in the array.</param>
+	/// <param name="from" type="Number" optional="true">The index at which to begin the search. Defaults to 0.</param>
+	/// <returns type="Boolean" />
 };
 Array.prototype.append = function(array){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Appends the passed array to the end of the current array.</summary>
+	/// <param name="array" type="Array">The array whose values you wish to append.</param>
+	/// <returns type="Array" />
 };
 Array.prototype.getLast = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the last item from the array.</summary>
 };
 Array.prototype.getRandom = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns a random item from the array.</summary>
 };
 Array.prototype.include = function(item){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Pushes the passed element into the array if it's not already present (case and type sensitive).</summary>
+	/// <param name="item">The item that should be added to the array.</param>
+	/// <returns type="Array" />
 };
 Array.prototype.combine = function(array){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Combines an array with all the items of another. Does not allow duplicates and is case and type sensitive.</summary>
+	/// <param name="array" type="Array">The array whose items should be combined into this array.</param>
+	/// <returns type="Array" />
 };
 Array.prototype.erase = function(item){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Removes all occurrences of an item from the array.</summary>
+	/// <param name="item">The item you wish to remove from the array.</param>
+	/// <returns type="Array" />
 };
 Array.prototype.empty = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Empties an array.</summary>
+	/// <returns type="Array" />
 };
 Array.prototype.flatten = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Flattens a multidimensional array into a single array.</summary>
+	/// <returns type="Array" />
 };
 Array.prototype.pick = function(){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Returns the first defined value of the array passed in, or null.</summary>
 };
 Array.prototype.hexToRgb = function(array){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Converts an hexadecimal color value to RGB. Input array must be the following hexadecimal color format. ['FF', 'FF', 'FF']</summary>
+	/// <param name="array" type="Boolean" optional="true">If true is passed, will output an array (e.g. [255, 51, 0]) instead of a string (e.g. "rgb(255, 51, 0)").</param>
 };
 Array.prototype.rgbToHex = function(array){
-	/// <summary></summary>
-	/// <param name=""></param>
-	/// <returns type="" />
+	/// <summary>Converts an RGB color value to hexadecimal. Input array must be in one of the following RGB color formats. [255, 255, 255], or [255, 255, 255, 1]</summary>
+	/// <param name="array" type="Boolean" optional="true">If true is passed, will output an array (e.g. ['ff', '33', '00']) instead of a string (e.g. '#ff3300').</param>
 };
 
 /*
