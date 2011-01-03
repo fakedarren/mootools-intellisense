@@ -1008,3 +1008,84 @@ Element.prototype = {
 };
 
 Element.Events = {};
+
+/*
+FX
+*/
+var Fx = function(){
+};
+Fx.prototype = {
+	start: function(){
+	},
+	set: function(){
+	},
+	cancel: function(){
+	},
+	pause: function(){
+	},
+	resume: function(){
+	}
+};
+
+/*
+FX.TWEEN
+*/
+Fx.Tween = function(){
+};
+Fx.Tween.prototype = {
+	start: function(){
+	},
+	set: function(){
+	},
+	cancel: function(){
+	},
+	pause: function(){
+	},
+	resume: function(){
+	}
+};
+
+Element.prototype.tween = function(){
+};
+Element.prototype.fade = function(){
+};
+Element.prototype.highlight = function(){
+};
+
+/*
+FX.MORPH
+*/
+Fx.Morph = function(){
+};
+Fx.Morph.prototype = {
+	start: function(){
+	},
+	set: function(){
+	},
+	cancel: function(){
+	},
+	pause: function(){
+	},
+	resume: function(){
+	}
+};
+
+Element.prototype.morph = function(){
+};
+
+/*
+FX.TRANSITIONS
+*/
+Fx.Transitions = {
+	linear: false,
+	Back: { easeIn: false, easeOut: false, easeInOut: false },
+	Bounce: { easeIn: false, easeOut: false, easeInOut: false },
+	Circ: { easeIn: false, easeOut: false, easeInOut: false },
+	Cubic: { easeIn: false, easeOut: false, easeInOut: false },
+	Elastic: { easeIn: false, easeOut: false, easeInOut: false },
+	Expo: { easeIn: false, easeOut: false, easeInOut: false },
+	Quart: { easeIn: false, easeOut: false, easeInOut: false },
+	Quint: { easeIn: false, easeOut: false, easeInOut: false },
+	Pow: { easeIn: false, easeOut: false, easeInOut: false },
+	Sine: { easeIn: false, easeOut: false, easeInOut: false }
+};
