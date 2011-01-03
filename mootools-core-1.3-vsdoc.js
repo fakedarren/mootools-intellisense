@@ -1012,44 +1012,147 @@ Element.Events = {};
 /*
 FX
 */
-var Fx = function(){
+var Fx = function(options){
+	/// <summary>
+	/// This Class will rarely be used on its own, but provides the foundation for all custom Fx Classes. All of the other Fx Classes inherit from this one. Options are:
+	/// <para></para>
+	/// <para>fps - (number: defaults to 50) The frames per second for the transition.</para>
+	/// <para>unit - (string: defaults to 'px') The unit, e.g. 'px', 'em', or '%'.</para>
+	/// <para>link - (string: defaults to 'ignore') Can be 'ignore', 'cancel' and 'chain'.</para>
+	/// <para>    'ignore' - Any calls made to start while the effect is running will be ignored.</para>
+	/// <para>    'cancel' - Any calls made to start while the effect is running will take precedence over the currently running transition. The new transition will start immediately, cancelling the one that is currently running.</para>
+	/// <para>    'chain' - Any calls made to start while the effect is running will be chained up, and will take place as soon as the current effect has finished, one after another.</para>
+	/// <para>duration - (number: defaults to 500) The duration of the effect in ms. Can also be one of:</para>
+	/// <para>    'short' - 250ms</para>
+	/// <para>    'normal' - 500ms</para>
+	/// <para>    'long' - 1000ms</para>
+	/// <para>transition - (function: defaults to 'sine:in:out' The equation to use for the effect see Fx.Transitions. Also accepts a string in the following form:</para>
+	/// <para>    transition[:in][:out] - for example, 'linear', 'quad:in', 'back:in', 'bounce:out', 'elastic:out', 'sine:in:out'</para>
+	/// <para></para>
+	/// <para>Events available are:</para>
+	/// <para></para>
+	/// <para>start - The function to execute when the effect begins.</para>
+	/// <para>cancel - The function to execute when you manually stop the effect.</para>
+	/// <para>complete - The function to execute after the effect has processed.</para>
+	/// <para>chainComplete - The function to execute when using link 'chain' (see options). It gets called after all effects in the chain have completed.</para>
+	/// <para></para>
+	/// </summary>	
+	/// <param name="options" type="Object" optional="true">An Object with options for the Fx.</param>
+	/// <returns type="Fx" />
 };
 Fx.prototype = {
-	start: function(){
+	start: function(from, to){
+		/// <summary>The start method is used to begin a transition. Fires the 'start' event.</summary>
+		/// <param name="from">The starting value for the effect. If only one argument is provided, this value will be used as the target value.</param>
+		/// <param name="to" optional="true">The target value for the effect.</param>
+		/// <returns type="Fx" />
 	},
-	set: function(){
+	set: function(to){
+		/// <summary>The set method is fired on every step of a transition. It can also be called manually to set a specific value to be immediately applied to the effect.</summary>
+		/// <param name="to">The value to immediately apply to the transition.</param>
+		/// <returns type="Fx" />
 	},
 	cancel: function(){
+		/// <summary>The cancel method is used to cancel a running transition. Fires the 'cancel' event.</summary>
+		/// <returns type="Fx" />
 	},
 	pause: function(){
+		/// <summary>Pauses a currently running effect.</summary>
+		/// <returns type="Fx" />
 	},
 	resume: function(){
+		/// <summary>Resume a previously paused effect.</summary>
+		/// <returns type="Fx" />
 	}
 };
 
 /*
 FX.TWEEN
 */
-Fx.Tween = function(){
+Fx.Tween = function(element, options){
+	/// <summary>
+	/// The Tween effect, used to transition any CSS property from one value to another. Options are:
+	/// <para></para>
+	/// <para>property - (string: defaults to null) The CSS property to transition to, for example 'width', 'color', 'font-size', 'border', etc. If this option is omitted, you are required to use the property as a first argument for the start and set methods.</para>
+	/// <para>fps - (number: defaults to 50) The frames per second for the transition.</para>
+	/// <para>unit - (string: defaults to 'px') The unit, e.g. 'px', 'em', or '%'.</para>
+	/// <para>link - (string: defaults to 'ignore') Can be 'ignore', 'cancel' and 'chain'.</para>
+	/// <para>    'ignore' - Any calls made to start while the effect is running will be ignored.</para>
+	/// <para>    'cancel' - Any calls made to start while the effect is running will take precedence over the currently running transition. The new transition will start immediately, cancelling the one that is currently running.</para>
+	/// <para>    'chain' - Any calls made to start while the effect is running will be chained up, and will take place as soon as the current effect has finished, one after another.</para>
+	/// <para>duration - (number: defaults to 500) The duration of the effect in ms. Can also be one of:</para>
+	/// <para>    'short' - 250ms</para>
+	/// <para>    'normal' - 500ms</para>
+	/// <para>    'long' - 1000ms</para>
+	/// <para>transition - (function: defaults to 'sine:in:out' The equation to use for the effect see Fx.Transitions. Also accepts a string in the following form:</para>
+	/// <para>    transition[:in][:out] - for example, 'linear', 'quad:in', 'back:in', 'bounce:out', 'elastic:out', 'sine:in:out'</para>
+	/// <para></para>
+	/// <para>Events available are:</para>
+	/// <para></para>
+	/// <para>start - The function to execute when the effect begins.</para>
+	/// <para>cancel - The function to execute when you manually stop the effect.</para>
+	/// <para>complete - The function to execute after the effect has processed.</para>
+	/// <para>chainComplete - The function to execute when using link 'chain' (see options). It gets called after all effects in the chain have completed.</para>
+	/// <para></para>
+	/// </summary>
+	/// <param name="element">An Element or element ID.</param>
+	/// <param name="options" type="Object" optional="true">An Object with options for the Fx.</param>
+	/// <returns type="Fx.Tween" />
 };
 Fx.Tween.prototype = {
-	start: function(){
+	start: function(property, from, to){
+		/// <summary>Transitions the Element's CSS property to the specified value.</summary>
+		/// <param name="property" type="String" optional="true">The css property to tween. Omit this if you use the property option.</param>
+		/// <param name="from" optional="true">The starting CSS property value for the effect.</param>
+		/// <param name="to">The target CSS property value for the effect.</param>
+		/// <returns type="Fx.Tween" />
 	},
-	set: function(){
+	set: function(property, value){
+		/// <summary>Sets the Element's CSS property to the specified value immediately.</summary>
+		/// <param name="property" type="String" optional="true">The css property to set the value to. Omit this if you use the property option.</param>
+		/// <param name="value">The value to set the CSS property of this instance to.</param>
+		/// <returns type="Fx.Tween" />
 	},
 	cancel: function(){
+		/// <summary>The cancel method is used to cancel a running transition. Fires the 'cancel' event.</summary>
+		/// <returns type="Fx.Tween" />
 	},
 	pause: function(){
+		/// <summary>Pauses a currently running effect.</summary>
+		/// <returns type="Fx.Tween" />
 	},
 	resume: function(){
+		/// <summary>Resume a previously paused effect.</summary>
+		/// <returns type="Fx.Tween" />
 	}
 };
 
-Element.prototype.tween = function(){
+Element.prototype.tween = function(property, from, to){
+	/// <summary>Transition any single CSS property of an Element from one value to another.</summary>
+	/// <param name="property">The property you want to animate.</param>
+	/// <param name="from">The start value for the transition. If you don't pass a third argument, this becomes the 'to' value.</param>
+	/// <param name="to" optional="true">The end value for the transition.</param>
+	/// <returns type="Element" />
 };
-Element.prototype.fade = function(){
+Element.prototype.fade = function(how){
+	/// <summary>
+	/// Fades an Element in or out, depending on the option passed. Default, if omitted, is 'toggle'. Options are:
+	/// <para></para>
+	/// <para>'toggle' - If visible, fade the element out, otherwise, fade it in.</para>
+	/// <para>'in' - Fade the element to 100% opacity.</para>
+	/// <para>'out' - Fade the element to 0% opacity.</para>
+	/// <para>'show' - Immediately set the element's opacity to 100%.</para>
+	/// <para>'hide' - Immediately set the element's opacity to 0%.</para>
+	/// <para>(number) - A float value between 0 and 1. Will fade the element to this opacity.</para>
+	/// <para></para>
+	/// <param name="how" optional="true">The opacity level as a number or string representation.</param>
+	/// <returns type="Element" />
 };
-Element.prototype.highlight = function(){
+Element.prototype.highlight = function(start, end){
+	/// <summary>Immediately transitions an Element's background color to a specified highlight color then back to its set background color.</summary>
+	/// <param name="start" type="String" optional="true">The color from which to start the transition. Defaults to '#FF8'.</param>
+	/// <param name="end" type="String" optional="true">The background color to return to after the highlight effect. Defaults to whatever the Element has set (or white).</param>
+	/// <returns type="Element" />
 };
 
 /*
@@ -1063,10 +1166,16 @@ Fx.Morph.prototype = {
 	set: function(){
 	},
 	cancel: function(){
+		/// <summary>The cancel method is used to cancel a running transition. Fires the 'cancel' event.</summary>
+		/// <returns type="Fx.Morph" />
 	},
 	pause: function(){
+		/// <summary>Pauses a currently running effect.</summary>
+		/// <returns type="Fx.Morph" />
 	},
 	resume: function(){
+		/// <summary>Resume a previously paused effect.</summary>
+		/// <returns type="Fx.Morph" />
 	}
 };
 
