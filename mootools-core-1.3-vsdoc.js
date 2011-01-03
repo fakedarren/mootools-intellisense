@@ -1285,14 +1285,39 @@ Request.JSON.prototype = Request.prototype;
 /*
 COOKIE
 */
-var Cookie = function(){
-};
-Cookie.prototype = {
-	write: function(){
+var Cookie = {
+	write: function(name, value, options){
+		/// <summary>
+		/// Writes a cookie in the browser. Options are:
+		/// <para></para>
+		/// <para>domain - (string: defaults to false) The domain the Cookie belongs to.</para>
+		/// <para>path - (string: defaults to '/') The path the Cookie belongs to.</para>
+		/// <para>duration - (number: defaults to false) The duration of the Cookie before it expires, in days. If set to false or 0, the cookie will be a session cookie that expires when the browser is closed.</para>
+		/// <para>secure - (boolean: defaults to false) Stored cookie information can be accessed only from a secure environment.</para>
+		/// <para></para>
+		/// </summary>
+		/// <param name="name" type="String">The name of the Cookie.</param>
+		/// <param name="value">The value of the Cookie. Cannot contain semicolons.</param>
+		/// <param name="options" optional="true">Any options.</param>
+		/// <returns type="Cookie" />
 	},
-	read: function(){
+	read: function(name){
+		/// <summary>Reads the value of a Cookie.</summary>
+		/// <param name="name" type="String">The name of the cookie to read.</param>
+		/// <returns type="String" />
 	},
-	dispose: function(){
+	dispose: function(name, options){
+		/// <summary>
+		/// Removes a cookie or it's options. Options are:
+		/// <para></para>
+		/// <para>domain - (string: defaults to false) The domain the Cookie belongs to.</para>
+		/// <para>path - (string: defaults to '/') The path the Cookie belongs to.</para>
+		/// <para>duration - (number: defaults to false) The duration of the Cookie before it expires, in days. If set to false or 0, the cookie will be a session cookie that expires when the browser is closed.</para>
+		/// <para>secure - (boolean: defaults to false) Stored cookie information can be accessed only from a secure environment.</para>
+		/// <para></para>
+		/// </summary>
+		/// <param name="name" type="String">The name of the Cookie.</param>
+		/// <param name="options" optional="true">Any options.</param>
 	}
 };
 
