@@ -1311,7 +1311,29 @@ JSON.prototype = {
 /*
 SWIFF
 */
-var Swiff = function(){
+var Swiff = function(path, options){
+	/// <summary>
+	/// Creates and returns a Flash object using supplied parameters. Options are:
+	/// <para></para>
+	/// <para>id - (string: defaults to 'Swiff_' + unique id) The id of the SWF object.</para>
+	/// <para>width - (number: defaults to 1) The width of the SWF object.</para>
+	/// <para>height - (number: defaults to 1) The height of the SWF object.</para>
+	/// <para>container - (element) The container into which the SWF object will be injected.</para>
+	/// <para>params - (object) Parameters to be passed to the SWF object (wmode, bgcolor, allowScriptAccess, loop, etc.).</para>
+	/// <para>allowScriptAccess - (string: defaults to always) The domain that the SWF object allows access to.</para>
+	/// <para>quality - (string: defaults to 'high') The render quality of the movie.</para>
+	/// <para>swLiveConnect - (boolean: defaults to true) the swLiveConnect parameter to allow remote scripting.</para>
+	/// <para>wMode - (string: defaults to 'window') Changes the way the SWF is displayed in the browser.</para>
+	/// <para>properties - (object) Additional attributes for the object element.</para>
+	/// <para>vars - (object) Vars will be passed to the SWF as querystring in flashVars.</para>
+	/// <para>callBacks - (object) Functions to call from the SWF. These will be available globally in the movie, and bound to the object.</para>
+	/// </summary>
+	/// <param name="path" type="String">The path to the SWF file.</param>
+	/// <param name="options type="Object" optional="true">Options.</param>
 };
-Swiff.prototype.remote = function(){
+Swiff.remote = function(obj, fn, args){
+	/// <summary>Calls an ActionScript function from JavaScript.</summary>
+	/// <param name="obj" type="Element">A Swiff instance (an HTML object Element).</param>
+	/// <param name="fn" type="String">The name of the function to execute in the Flash movie.</param>
+	/// <param name="args" optional="true">Any number of arguments to pass to the named function.</param>
 };
